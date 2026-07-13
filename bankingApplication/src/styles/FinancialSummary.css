@@ -1,0 +1,4 @@
+.financialSummary {
+    display: flex;
+    justify-content: space-between;
+}
