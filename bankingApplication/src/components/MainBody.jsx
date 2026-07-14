@@ -1,4 +1,4 @@
-import SidebarRight from "./Sidebar-Right";
+import SidebarRight from "./SidebarRight";
 import SidebarLeft from "./SidebarLeft";
 import "../styles/MainBody.css";
 import CustomerPortfolio from "./CustomerPortfolio";

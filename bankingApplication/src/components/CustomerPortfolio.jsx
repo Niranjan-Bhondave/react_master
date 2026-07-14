@@ -2,6 +2,7 @@ import TransactionContext from "../context/TransactionContext.jsx";
 import customerInformation from "../Data/CustomerInformation.js"
 import Analytics from "./Analytics.jsx";
 import FinancialSummary from "./FinancialSummary.jsx";
+import RecentTransactions from "./RecentTransactions.jsx";
 
 
 export default function CustomerPortfolio(){
@@ -14,9 +15,10 @@ export default function CustomerPortfolio(){
     return(
         <div>
             <h2>Welcome,{customerProfile.name}</h2>
-            <TransactionContext.Provider value={{accounts,transactions}}>
-            <FinancialSummary />
+            <TransactionContext.Provider value={transactions}>
+            <FinancialSummary accounts = {accounts}/>
             <Analytics />
+            <RecentTransactions />
             </TransactionContext.Provider>
         </div>
     )

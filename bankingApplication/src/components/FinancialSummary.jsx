@@ -3,9 +3,9 @@ import "../styles/FinancialSummary.css"
 import { useContext } from "react";
 import TransactionContext from "../context/TransactionContext";
 
-export default function FinancialSummary(){
+export default function FinancialSummary({accounts}){
 
-    const {accounts,transactions} = useContext(TransactionContext);
+    const transactions = useContext(TransactionContext);
 
     const income = transactions.filter((transaction)=>transaction.type === 'credit').reduce((a,b)=>a+b.amount,0);
     const expenses = transactions.filter((transaction)=>transaction.type === 'debit').reduce((a,b)=>a+b.amount,0);
