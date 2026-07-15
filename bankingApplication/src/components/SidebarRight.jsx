@@ -1,4 +1,5 @@
 import customerInformation from "../Data/CustomerInformation"
+import Notification from "./Notification";
 
 export default function SidebarRight(){
 
@@ -10,7 +11,7 @@ export default function SidebarRight(){
             <br />
             {
                 notifications.map((notification)=>{
-                    return 
+                    return <Notification key = {notification.id} notification={notification}/>
                 })
             }
         </div>

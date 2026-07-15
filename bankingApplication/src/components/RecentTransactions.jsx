@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import TransactionContext from "../context/TransactionContext"
 import TransactionRow from "./TransactionRow";
+import { Link } from "react-router";
 export default function RecentTransactions(){
 
     const transactions = useContext(TransactionContext);
@@ -20,12 +21,13 @@ export default function RecentTransactions(){
                 </thead>
                 <tbody>
                 {
-                    transactions.map((transaction)=>{
+                    transactions.slice(0,5).map((transaction)=>{
                         return <TransactionRow transaction={transaction} key={transaction.id}/>
                     })
                 }
                 </tbody>
             </table>
+            <Link to="/transactions">View All Transactions</Link>
         </div>
     )
 }

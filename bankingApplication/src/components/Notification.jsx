@@ -6,13 +6,13 @@ export default function Notification({notification}){
     const [messageStatus,setMessageStatus] = useState(read);
 
     function handleClick(){
-        if(messageStatus == false){
+        if(messageStatus === false){
             setMessageStatus(true);
         }
     }
 
     return (
-        <div onClick={()=>handleClick()} style={read == true ? {backgroundColor:"red"} : {backgroundColor:"green"}}>
+        <div onClick={()=>handleClick()} style={messageStatus === true ? {backgroundColor:"green"} : {backgroundColor:"red"}}>
             <h2>{title}</h2>
             <p>{message}</p>
         </div>

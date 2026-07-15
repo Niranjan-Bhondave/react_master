@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function TransactionRow({transaction}){
     const {id,date,description,type,amount} = transaction;
 
@@ -12,6 +14,7 @@ export default function TransactionRow({transaction}){
         <td>{description}</td>
         <td>{getFirstLetterCapitalised(type)}</td>
         <td>{amount}</td>
+        <td><Link to={`/transactions/${id}`}>View details</Link></td>
     </tr>
     )
 }
