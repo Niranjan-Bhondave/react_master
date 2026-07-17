@@ -1,8 +1,11 @@
 import { Link } from "react-router";
 import TransactionRow from "../components/TransactionRow";
-import customerInformation from "../Data/CustomerInformation";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import TransactionContext from "../context/TransactionContext";
 export default function Transactions(){
+
+    const customerInformation = useContext(TransactionContext);
+    
     const transactions = customerInformation.transactions;
     const [descriptionSearch,setDescriptionSearch] = useState('');
     const [merchantSearch,setMerchantSearch] = useState('');

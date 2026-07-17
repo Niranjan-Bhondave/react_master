@@ -1,8 +1,10 @@
     import { useParams } from "react-router"
-    import customerInformation from "../Data/CustomerInformation";
+import TransactionContext from "../context/TransactionContext";
+import { useContext } from "react";
 
     export default function TransactionDetails(){
     const {id} = useParams();
+    const customerInformation = useContext(TransactionContext);
     const retrievedTransaction = customerInformation.transactions.find(
     (transaction) => transaction.id === Number(id)
     );
